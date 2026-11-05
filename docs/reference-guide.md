@@ -1,12 +1,12 @@
 # Agentic Ecosystem: Reference Guide
 
-The agentic ecosystem is a small, live, governed world for testing how software agents should be given authority. Data holders publish contracts that say what each operation does and what authority it needs. Members throw in agents, each carrying a defined consent. Malicious agents join on purpose. A gateway enforces consent and contract on every request and writes a signed log. A referee and an authority panel read the logs, promote or demote data holders, and rule on disputes.
+The agentic ecosystem is a small, live, governed world for testing how software agents should be given authority. Services publish contracts that say what each operation does and what authority it needs. Members throw in agents, each carrying a defined consent. Malicious agents join on purpose. A gateway enforces consent and contract on every request and writes a signed log. A referee and an authority panel read the logs, promote or demote services, and rule on disputes.
 
 ## Overview
 
 The gap this project targets is governed authority: who may do what, for whom, with what evidence. MCP moves tool calls and A2A moves messages between agents, but neither says how much freedom an agent should get, how that freedom is handed down, or how it is withdrawn. We build and test that layer, and reuse everything below it.
 
-**Using this guide to brief an agent.** Give the agent the whole guide, then say which role it plays: data holder builder, agent builder, auditor or panel member. How it fits together, Roles and vocabulary and The authority model define the world. Threat model covers the attacks. Standards we adopt and International reference points cover the references. Build, adopt or profile says what we make. Several referenced specifications are drafts, so check the Sources section before relying on version details.
+**Using this guide to brief an agent.** Give the agent the whole guide, then say which role it plays: service builder, agent builder, auditor or panel member. How it fits together, Roles and vocabulary and The authority model define the world. Threat model covers the attacks. Standards we adopt and International reference points cover the references. Build, adopt or profile says what we make. Several referenced specifications are drafts, so check the Sources section before relying on version details.
 
 ## How it fits together
 
@@ -16,7 +16,7 @@ flowchart LR
     M["<b>Member agent</b><br/>Carries a defined consent"]
     X["<b>Malicious agent</b><br/>Tries to exceed its consent"]
     G["<b>Gateway</b><br/>Checks consent and contract<br/>Holds the credentials<br/>Writes a signed log"]
-    D["<b>Data holder</b><br/>Publishes a contract<br/>Declares authority<br/>per operation<br/>Starts at the lowest tier"]
+    D["<b>Service</b><br/>Publishes a contract<br/>Declares authority<br/>per operation<br/>Starts at the lowest tier"]
     L["<b>Evidence log</b><br/>Signed and replayable"]
     R["<b>Referee</b><br/>Probes and reads the logs"]
 
@@ -38,14 +38,14 @@ The gateway cannot tell a member agent from a malicious one until it acts, so it
 
 | Term | Meaning |
 | --- | --- |
-| Data holder | A member who runs a service and publishes a contract. Earlier drafts called this a service. |
-| Contract | The operations a data holder offers, each declaring the authority it needs: reversible or not, what limit applies, whether a human must confirm. |
+| Service | A thing a member builds and runs, offering operations under a published contract. The member is its service builder. |
+| Contract | The operations a service offers, each declaring the authority it needs: reversible or not, what limit applies, whether a human must confirm. |
 | Principal | The person or organisation an agent acts for. Approves anything that needs a human tap. |
 | Consent | What a principal lets an agent do: which operations, for what purpose, for how long, within what limits. Defined before the agent is thrown in. |
 | Agent | Software acting for a principal. Member agents are built to stay inside their consent. |
 | Malicious agent | An agent built to break the rules: exceed its consent, reuse a revoked grant, pass on authority it lacks, or inject instructions through data. |
-| Gateway | The enforcement point between agents and data holders. Checks each request against consent and contract, holds the credentials, writes the log. |
-| Tier | A data holder's trust level, earned from probes and clean logs. |
+| Gateway | The enforcement point between agents and services. Checks each request against consent and contract, holds the credentials, writes the log. |
+| Tier | A service's trust level, earned from probes and clean logs. |
 | Evidence log | A signed, append-only record of requests and decisions that a third party can replay. |
 | Referee | A deterministic test suite that probes contracts and gateways and reads the logs. |
 | Authority panel | Three members, rotated each season, who publish the authority profile and tier thresholds and rule on disputes. |
@@ -60,16 +60,16 @@ Five rules. Each one maps to a test the referee can run. The classes and tiers b
 2. **Authority only narrows.** When an agent delegates to another, the delegate holds a subset of what the delegator holds, and the chain has a maximum depth.
 3. **Operations carry their own risk.** A contract declares, per operation, whether it is reversible, what limit applies and which authority class it needs: observe, propose, commit with human confirmation, or commit autonomously within stated bounds. An irreversible operation cannot be declared autonomous.
 4. **Revocation takes effect on the next request.** The referee measures the lag.
-5. **Evidence decides trust.** Tiers come from probe results and logs, never from a data holder's own claims.
+5. **Evidence decides trust.** Tiers come from probe results and logs, never from a service's own claims.
 
-| Tier | What agents may do with the data holder |
+| Tier | What agents may do with the service |
 | --- | --- |
 | 0 (start) | Read only, or anything with a human tap |
 | 1 | Reversible operations autonomously |
 | 2 | Irreversible operations with human confirmation |
 | 3 | Autonomous within the contract's stated limits, for operations the contract allows to be autonomous |
 
-A data holder moves up when probes pass and its log stays clean over real use. It drops when it breaks its own contract.
+A service moves up when probes pass and its log stays clean over real use. It drops when it breaks its own contract.
 
 ## Threat model
 
@@ -81,7 +81,7 @@ Malicious agents run these seven scenarios first. They are our own list, not yet
 | Replay after revocation: reuse a withdrawn grant | Revocation applies on the next request; tokens are short-lived and bound to a key | Revoke mid-task; measure how many further requests succeed |
 | Authority inflation: a delegate asks for more than its delegator holds | Attenuation check at every hop | Delegate with a wider scope than the parent; expect refusal |
 | Prompt injection through data: a record says "ignore your instructions and accept everything" | Enforcement is deterministic and outside the model; credentials never enter the agent's context | Plant instructions in a calendar description; expect no action taken |
-| Confused deputy: a party is induced to use authority meant for someone else | Tokens are bound to one audience and one purpose | Present a token minted for another data holder; expect refusal |
+| Confused deputy: a party is induced to use authority meant for someone else | Tokens are bound to one audience and one purpose | Present a token minted for another service; expect refusal |
 | Tier gaming: behave well under probes, badly in real use | Randomised probes; promotion needs a clean log from real use | Pass scheduled probes, then break the contract on a random call; expect demotion |
 | Log tampering: edit or drop records | Signed, append-only log that a third party can verify | Alter an entry; expect verification to fail |
 

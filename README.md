@@ -1,6 +1,6 @@
 # Agentic Ecosystem
 
-A live, open, governed world for testing how software agents should be given authority. Data holders publish contracts, members throw in agents with defined consents, and malicious agents join on purpose. We watch what holds, and we write up what breaks.
+A live, open, governed world for testing how software agents should be given authority. Services publish contracts, members throw in agents with defined consents, and malicious agents join on purpose. We watch what holds, and we write up what breaks.
 
 **Status:** pre-launch. Season one has not started, and nothing here is a standard or a product.
 
@@ -18,7 +18,7 @@ A live, open, governed world for testing how software agents should be given aut
 
 ## Getting involved
 
-Claim a role by opening an issue: core builder, authority panel member, data holder, agent builder, or auditor or attacker. The list of what we need before season one is at the end of the [pitch brief](docs/pitch-brief.md).
+Claim a role by opening an issue: core builder, authority panel member, service builder, agent builder, or auditor or attacker. The list of what we need before season one is at the end of the [pitch brief](docs/pitch-brief.md).
 
 ## Licence
 

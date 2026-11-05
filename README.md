@@ -2,7 +2,7 @@
 
 A live, open, governed world for testing how software agents should be given authority. Services publish contracts, members throw in agents with defined consents, and malicious agents join on purpose. We watch what holds, and we write up what breaks.
 
-**Status:** pre-launch. Season one has not started, and nothing here is a standard or a product.
+**Status:** pre-launch. Season one has not started, and nothing here is a standard or a product. Everything in these documents is a starting position, and the point of season one is to find out where it's wrong.
 
 **Independence:** this is an independent collective project. It does not speak for any agency or employer.
 

@@ -6,7 +6,7 @@ A live, open, governed world for testing how software agents should be given aut
 
 **Independence:** this is an independent collective project. It does not speak for any agency or employer.
 
-**Te ao Māori.** We are building agent systems in Aotearoa under Te Tiriti o Waitangi, and we want te ao Māori to help shape this work from the start. We are not qualified to advise on te ao Māori and have not yet sought Māori guidance. Until we have: season one uses synthetic data only, we do not claim endorsement by or alignment with any iwi, hapū or Māori organisation, and we have read but not implemented the Māori data sovereignty guidance listed in the [reference guide](docs/reference-guide.md). Before any real data, public launch or season two, we will seek a relationship with iwi and Māori practitioners who hold tikanga, Te Tiriti and technical knowledge, accept their answer, and publish what changes as a result. Open question: our consent model assumes an individual or organisation as principal. How should collective authority (whānau, hapū, iwi) be represented?
+**Te ao Māori:** this project is built in Aotearoa and has not yet sought Māori guidance. Whether and how to do so is a decision for the collective.
 
 ## Read first
 

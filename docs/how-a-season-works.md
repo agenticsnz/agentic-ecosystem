@@ -63,5 +63,5 @@ Before season one can start, we need to settle:
 - [ ] A start date and a launch meetup
 - [ ] The three first data holders (venue, speakers, newsletter) and who builds each
 - [ ] A name for the world and a short founding statement
-- [ ] A relationship with iwi and Māori practitioners who can guide the te ao Māori framing. Not a precondition for publishing drafts, but a precondition for real data, public launch or season two (see the README)
+- [ ] A collective decision on whether and how to seek Māori guidance
 - [ ] The scripted incident for week six, kept secret from everyone but the core team

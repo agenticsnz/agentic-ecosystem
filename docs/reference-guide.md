@@ -117,6 +117,21 @@ These regimes and frameworks share one idea: delegation that is bounded, revocab
 | [NIST NCCoE concept paper on software and AI agent identity and authorization](https://www.nist.gov/news-events/news/2026/02/new-concept-paper-identity-and-authority-software-agents) | Questions on verifying agent identity, granting permissions, logging activity, preventing agents from denying their actions, and controlling prompt injection. | Published 5 February 2026; comments closed 2 April 2026 |
 | [OWASP Top 10 for Agentic Applications for 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026) | The wider risk catalogue our threat model should be mapped to. The page did not list the ten risks; they are in its download. | Published 9 December 2025 |
 
+## Te ao Māori reference points
+
+We want te ao Māori to help shape this work. We are not qualified to advise on it and have not yet sought Māori guidance, so this is a reading list, not a compliance claim. Season one uses synthetic data only. The README states our position and the point at which we will seek a relationship with iwi and Māori practitioners.
+
+| Reference | What it offers this project | Limit |
+| --- | --- | --- |
+| [Te Mana Raraunga, Māori Data Sovereignty Principles](https://online.op.ac.nz/assets/LearningTeachingDevelopment/TMR+Maori+Data+Sovereignty+Principles+Oct+2018.pdf) (October 2018) | Six principles: rangatiratanga, whakapapa, whanaungatanga, kotahitanga, manaakitanga, kaitiakitanga. Whanaungatanga balances individual and collective interests, which our consent model does not yet do | Read from a polytechnic mirror |
+| [CARE Principles for Indigenous Data Governance](https://www.auckland.ac.nz/en/research/research-resources/research-data/research-data-policies-ethics-requirements/care-principles-indigenous-data.html) | Collective benefit, authority to control, responsibility, ethics | Written for data, not agents |
+| [Māori Data Governance Model](https://scoop.co.nz/stories/BU2305/S00434/release-of-te-kahui-raraungadata-iwi-leaders-group-maori-data-governance-model.htm) (26 May 2023) | Te Kāhui Raraunga and the Data Iwi Leaders Group, endorsed by the Iwi Chairs Forum. Eight Pou | Release read, not the model |
+| [Te Kāhui Raraunga AI safeguards](https://www.rnz.co.nz/news/national/577327/iwi-leaders-unveil-ai-safeguards-to-protect-maori-data) (October 2025) | Bias monitoring, accountability, transparency and the ability to exit systems | Aimed at agencies; news report only |
+| [Ngā Tikanga Paihere](https://data.govt.nz/toolkit/data-ethics/nga-tikanga-paihere) | Ten tikanga, as questions to ask at the start of a data project | Guidance, from the integrated data infrastructure |
+| [Taiuru, Te Tiriti and Māori ethics guidelines for AI and data](https://www.taiuru.maori.nz/tiritiethicalguide) | Co-design, free prior and informed consent, and an advisory group rather than reliance on one Māori person | CC BY 4.0; written for government |
+| [Taiuru, He Tangata, He Karetao, He Ātārangi](https://waateanews.com/2026/03/11/tech-indigenous-ai-framework-offers-path-for-maori-in-the-age-of-artificial-intelligence/) (March 2026) | A framework for iwi and Māori organisations to assess whether an AI system aligns with tikanga | A tool for Māori to judge systems; news report only |
+| [Te Hiku Media, Kaitiakitanga License](https://www.itu.int/hub/2022/08/ai-indigenous-languages-maori-te-reo/) | Data kept under community control. A precedent for collective authority over a system | An example, not a standard |
+
 ## Build, adopt or profile
 
 | Piece | Approach | Notes |
@@ -140,7 +155,7 @@ Two independent gateways must interoperate before the profile is frozen. That is
 - One Foundation trust root for season one, with federated roots later?
 - Who writes the register's rules for admitting, suspending and revoking participants?
 - How does a contract express purpose: a shared vocabulary, or free text that the authority treats as the most restrictive class?
-- How do te ao Māori data governance principles enter the profile at version zero, and who advises on it?
+- Our consent model assumes an individual or organisation as principal. How should collective authority (whānau, hapū, iwi) be represented? This is a question for the relationship described in the README, not one we can answer ourselves.
 - Which of the OWASP agentic risks does season one test, and which wait?
 - Can a member's gateway be run by someone else on their behalf? The likely real-world shape is hosted, not self-run, so season two should test it.
 
@@ -164,5 +179,6 @@ Pages opened for this guide, 5 November 2026:
 - [Careful Adoption of Agentic AI Services (NCSC-NZ)](https://ncsc.govt.nz/protect-your-organisation/careful-adoption-of-agentic-ai-services/)
 - [NIST concept paper announcement](https://www.nist.gov/news-events/news/2026/02/new-concept-paper-identity-and-authority-software-agents)
 - [OWASP Top 10 for Agentic Applications for 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026)
+- The te ao Māori reference points above, each linked in its table row
 
 Not retrieved: the MBIE CDR industry brief and the legislation.govt.nz copy of the Act returned nothing, and the Cedar home page failed. Open Policy Agent and Sigstore Rekor are named from general knowledge only and were not checked.
